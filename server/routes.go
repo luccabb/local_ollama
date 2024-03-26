@@ -30,7 +30,6 @@ import (
 	"github.com/jmorganca/ollama/api"
 	"github.com/jmorganca/ollama/gpu"
 	"github.com/jmorganca/ollama/llm"
-	"github.com/jmorganca/ollama/openai"
 	"github.com/jmorganca/ollama/parser"
 	"github.com/jmorganca/ollama/version"
 )
@@ -1038,12 +1037,12 @@ func (s *Server) GenerateRoutes() http.Handler {
 		allowedHostsMiddleware(s.addr),
 	)
 
-	r.POST("/api/pull", PullModelHandler)
+	// r.POST("/api/pull", PullModelHandler)
 	r.POST("/api/generate", GenerateHandler)
 	r.POST("/api/chat", ChatHandler)
 	r.POST("/api/embeddings", EmbeddingsHandler)
 	r.POST("/api/create", CreateModelHandler)
-	r.POST("/api/push", PushModelHandler)
+	// r.POST("/api/push", PushModelHandler)
 	r.POST("/api/copy", CopyModelHandler)
 	r.DELETE("/api/delete", DeleteModelHandler)
 	r.POST("/api/show", ShowModelHandler)
