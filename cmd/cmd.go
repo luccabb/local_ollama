@@ -235,9 +235,9 @@ func RunHandler(cmd *cobra.Command, args []string) error {
 	var statusError api.StatusError
 	switch {
 	case errors.As(err, &statusError) && statusError.StatusCode == http.StatusNotFound:
-		if err := PullHandler(cmd, []string{name}); err != nil {
-			return err
-		}
+		// if err := PullHandler(cmd, []string{name}); err != nil {
+		// 	return err
+		// }
 
 		show, err = client.Show(cmd.Context(), &api.ShowRequest{Name: name})
 		if err != nil {

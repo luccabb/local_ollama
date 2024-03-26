@@ -1042,7 +1042,7 @@ func (s *Server) GenerateRoutes() http.Handler {
 	r.POST("/api/generate", GenerateHandler)
 	r.POST("/api/chat", ChatHandler)
 	r.POST("/api/embeddings", EmbeddingsHandler)
-	r.POST("/api/create", CreateModelHandler)
+	// r.POST("/api/create", CreateModelHandler)
 	// r.POST("/api/push", PushModelHandler)
 	r.POST("/api/copy", CopyModelHandler)
 	r.DELETE("/api/delete", DeleteModelHandler)
